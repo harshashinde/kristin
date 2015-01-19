@@ -28,10 +28,10 @@ module Kristin
     def process_options
       opts = []
       
-      opts.push("--embed-image 0") if @options[:embed_image] == false
-      opts.push("--embed-css 0") if @options[:embed_css] == false
-      opts.push("--embed-font 0") if @options[:embed_font] == false
-      opts.push("--embed-javascript 0") if @options[:embed_javascript] == false
+      opts.push("--embed I") if @options[:embed_image] == false
+      opts.push("--embed c") if @options[:embed_css] == false
+      opts.push("--embed F") if @options[:embed_font] == false
+      opts.push("--embed j") if @options[:embed_javascript] == false
 
       opts.push("--process-outline 0") if @options[:process_outline] == false
       opts.push("--first-page #{@options[:first_page]}") if @options[:first_page]
