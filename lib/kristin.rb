@@ -31,7 +31,7 @@ module Kristin
 
       #pdf2htmlEX --dest-dir out --embed fi /path/to/file.pdf
         
-      opts.push("--dest-dir out --embed cFI") if @options[:embed_image_css] == 0
+      opts.push("--dest-dir out --embed cfi") if @options[:embed_image_css] == 0
 
       opts.push("--embed I") if @options[:embed_image] == false
       opts.push("--embed c") if @options[:embed_css] == false
