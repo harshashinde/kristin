@@ -26,8 +26,13 @@ module Kristin
     private
 
     def process_options
+
       opts = []
-      
+
+      #pdf2htmlEX --dest-dir out --embed fi /path/to/file.pdf
+        
+      opts.push("--dest-dir out --embed cFI") if @options[:embed_image_css] == 0
+
       opts.push("--embed I") if @options[:embed_image] == false
       opts.push("--embed c") if @options[:embed_css] == false
       opts.push("--embed F") if @options[:embed_font] == false
