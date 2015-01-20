@@ -31,13 +31,9 @@ module Kristin
 
       #pdf2htmlEX --dest-dir out --embed fi /path/to/file.pdf
         
-      opts.push("--dest-dir out --embed cfi") if @options[:embed_image_css] == 0
+      opts.push("--dest-dir out/images --embed cfi") if @options[:embed_image_css] == 0
 
-      opts.push("--embed I") if @options[:embed_image] == false
-      opts.push("--embed c") if @options[:embed_css] == false
-      opts.push("--embed F") if @options[:embed_font] == false
-      opts.push("--embed j") if @options[:embed_javascript] == false
-
+      
       opts.push("--process-outline 0") if @options[:process_outline] == false
       opts.push("--first-page #{@options[:first_page]}") if @options[:first_page]
       opts.push("--last-page #{@options[:last_page]}") if @options[:last_page]
