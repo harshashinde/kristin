@@ -30,12 +30,13 @@ module Kristin
       opts = []
 
       #pdf2htmlEX --dest-dir out --embed fi /path/to/file.pdf
-      user_id =  @options[:user_id]
-      course_id =  @options[:course_id]
-      chapter_id_folder =  @options[:chapter_id_folder]
+      #user_id =  @options[:user_id]
+      #course_id =  @options[:course_id]
+      #chapter_id_folder =  @options[:chapter_id_folder]
         
-      opts.push("--dest-dir out/images/#{user_id}/#{course_id}/#{chapter_id_folder} --embed cfi") if @options[:embed_image_css] == 0
+      #opts.push("--dest-dir out/images/#{user_id}/#{course_id}/#{chapter_id_folder} --embed cfi") if @options[:embed_image_css] == 0
 
+      opts.push("--dest-dir #{@options[:chapter_id_folder]} --embed cfi") if @options[:embed_image_css] == 0
       
       opts.push("--process-outline 0") if @options[:process_outline] == false
       opts.push("--first-page #{@options[:first_page]}") if @options[:first_page]
